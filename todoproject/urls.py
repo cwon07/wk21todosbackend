@@ -22,7 +22,7 @@ from todos.views import TodoViewSet
 # create a new router
 router = routers.DefaultRouter()
 # register TodoViewSet with the router
-router.register("todos", TodoViewSet)
+router.register(r"todos", TodoViewSet)
 
 print(router.urls)
 
