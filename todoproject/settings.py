@@ -18,8 +18,6 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-## Variable CORS_ALLOW_ALL_ORIGINS is set to True to allow unrestricted access to the API.
-CORS_ALLOW_ALL_ORIGINS = True
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -35,12 +33,10 @@ ALLOWED_HOSTS = []
 
 ## Handling Allowed Hosts on Render
 ## add the render.com hostname to ALLOWED_HOSTS
-RENDER_EXTERNAL_HOSTNAME = os.environ.get
-('RENDER_EXTERNAL_HOSTNAME')
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
-    ALLOWED_HOSTS.append
-    (RENDER_EXTERNAL_HOSTNAME)
-    
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -65,6 +61,9 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+
+## Variable CORS_ALLOW_ALL_ORIGINS is set to True to allow unrestricted access to the API.
+CORS_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = 'todoproject.urls'
 
